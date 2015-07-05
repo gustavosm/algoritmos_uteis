@@ -17,7 +17,7 @@ ii fast_doubling(lli n, lli mod)
 	ret.first = (aux.first * (aux.second * 2 + mod - aux.first)) % mod;
 	ret.second = ((lli)pow(aux.first, 2) + (lli)pow(aux.second, 2)) % mod;
 	 
-	return (n & 1? ret : ii(ret.second, (ret.first+ret.second)%mod));
+	return (!(n & 1)? ret : ii(ret.second, (ret.first+ret.second)%mod));
 }
 
 int main()
